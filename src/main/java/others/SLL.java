@@ -92,7 +92,6 @@ public class SLL {
             newNode.next = mainPtr;
         }
     }
-
     public void insertAtPosition2(int value, int position) {
         ListNode newNode = new ListNode(value);
         if (position == 0) {
@@ -110,6 +109,13 @@ public class SLL {
             previous.next = newNode;
         }
     }
+
+    /* Deleting a node in the start of a SLL */
+    //TODO:: Time Complexity is O() and Space Complexity is O()
+    public void deleteFirst() {
+
+    }
+
 
 
     /* Creating a SLL */
