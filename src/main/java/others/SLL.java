@@ -1,5 +1,8 @@
 package others;
 
+import com.sun.xml.internal.bind.v2.TODO;
+import jdk.nashorn.internal.ir.IfNode;
+
 /* Representing a SinglyLinkedList (SLL) */
 public class SLL {
     private ListNode head;
@@ -112,10 +115,161 @@ public class SLL {
 
     /* Deleting a node in the start of a SLL */
     //TODO:: Time Complexity is O() and Space Complexity is O()
-    public void deleteFirst() {
-
+    public ListNode deleteFirst() {
+        if (head == null) {
+            return null;
+        }
+        ListNode tmp = head;
+        head = head.next;
+        tmp.next = null;
+        return tmp;
     }
 
+    /* Deleting a node in the end of a SLL */
+    //TODO:: Time Complexity is O() and Space Complexity is O()
+    public ListNode deleteLast() {
+        if (head == null) {
+            return null;
+        }
+        ListNode refPtr = null;
+        ListNode mainPtr = head;
+        while (null != mainPtr.next) {
+            refPtr = mainPtr;
+            mainPtr = mainPtr.next;
+        }
+        refPtr.next = null;
+        return mainPtr;
+    }
+
+    /* Deleting a node in a SLL at a given position */
+    //TODO:: Time Complexity is O() and Space Complexity is O()
+    public ListNode deleteAtPosition(int position) {
+        ListNode mainPtr = head;
+        ListNode refPtr = null;
+        int count = 0;
+        if (position == 0) {
+            ListNode temp = head;
+            head = head.next;
+            temp.next = null;
+            return temp;
+        } else {
+            while (count <= position - 1) {
+                count++;
+                refPtr = mainPtr;
+                mainPtr = mainPtr.next;
+            }
+            ListNode current = refPtr.next;
+            refPtr.next = refPtr.next.next;
+
+            return current;
+        }
+    }
+    public void deleteAtPosition2(int position) {
+        if (position == 0) {
+            ListNode temp = head;
+            head = head.next;
+            temp.next = null;
+        } else {
+            ListNode previous = head;
+            int count = 0;
+            while (count < position - 1) {
+                previous = previous.next;
+                count++;
+            }
+            ListNode current = previous.next;
+            previous.next = current.next;
+            current.next = null;
+        }
+    }
+
+    /* Searching an element in a SLL */
+    //TODO:: Time Complexity is O() and Space Complexity is O()
+    public boolean search(int key) {
+        if (head == null) {
+            return false;
+        }
+        ListNode current = head;
+        while (current != null) {
+            if (current.data == key) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
+    /* Reversing a SLL */
+    //TODO:: Time Complexity is O() and Space Complexity is O()
+    public ListNode reversingSLL() {
+        if (head == null) {
+            return head;
+        }
+        ListNode current = head;
+        ListNode previous = null;
+        ListNode next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        return previous;
+    }
+
+    /* Finding the middle element in a SLL */
+    //TODO:: Time Complexity is O(n) and Space Complexity is O(1)
+    public ListNode findMiddleElement() {
+        if (head == null) {
+            return null;
+        }
+        ListNode slowPointer = head;
+        ListNode fastPointer = head;
+        while (fastPointer != null && fastPointer.next != null) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+        }
+        return slowPointer;
+    }
+
+    /* Finding nth element from the last of a SLL */
+    //TODO: Time Complexity is O(n) and space complexity is O(1)
+    public ListNode findNthFromLast(int numberFromLast) {
+        if (head == null) {
+            return null;
+        }
+        if (numberFromLast <= 0) {
+            throw new IllegalArgumentException("Invalid value: n =  "+numberFromLast);
+        }
+        ListNode mainPtr = head;
+        ListNode refPtr = head;
+        int counter = 0;
+        while (counter < numberFromLast) {
+            if (refPtr == null) {
+                throw new IllegalArgumentException(numberFromLast+" is greater than number of elements in the list ");
+            }
+            refPtr = refPtr.next;
+            counter++;
+        }
+        while (refPtr != null) {
+            refPtr = refPtr.next;
+            mainPtr = mainPtr.next;
+        }
+        return mainPtr;
+    }
+
+    /* Finding nth element from the start of a SLL */
+    //TODO: Time Complexity is O(n) and space complexity is O(1)
+    public ListNode findNthFromStart(int numberFromStart) {
+        ListNode mainPtr = head;
+        ListNode refPtr = head;
+        int counter = 0;
+        while (counter < numberFromStart) {
+            mainPtr = refPtr;
+            refPtr = refPtr.next;
+            counter++;
+        }
+        return mainPtr;
+    }
 
 
     /* Creating a SLL */
@@ -154,6 +308,53 @@ public class SLL {
         sll.display();
         sll.insertAtPosition(30, 3);
         sll.display(); // 1 --> 13 --> 3 --> 30 --> 5 --> 10 --> 15 --> 20 --> 23 --> 26 --> null
+
+        // deleting first node in the SLL
+        sll.deleteFirst();
+        sll.display(); // 13 --> 3 --> 30 --> 5 --> 10 --> 15 --> 20 --> 23 --> 26 --> null
+        sll.deleteFirst();
+        sll.display(); // 3 --> 30 --> 5 --> 10 --> 15 --> 20 --> 23 --> 26 --> null
+
+        // deleting last node in a SLL
+        System.out.println("deleting the last node:: "+sll.deleteLast().data);
+        sll.display(); // 3 --> 30 --> 5 --> 10 --> 15 --> 20 --> 23 --> null
+        System.out.println("deleting the last node:: "+sll.deleteLast().data);
+        sll.display(); // 3 --> 30 --> 5 --> 10 --> 15 --> 20 --> null
+
+        // deleting a node at a certain position
+        System.out.println("deleting node at a certain position:: "+sll.deleteAtPosition(1).data); // 30
+        sll.display(); // 3 --> 5 --> 10 --> 15 --> 20 --> null
+        System.out.println("deleting node at a certain position:: "+sll.deleteAtPosition(3).data); // 15
+        sll.display(); // 3 --> 5 --> 10 --> 20 --> null
+
+        // searching for an element in a SLL
+        System.out.println("seaching for 3::: "+sll.search(3)); //true
+        System.out.println("seaching for 20::: "+sll.search(20)); //true
+        System.out.println("seaching for 22::: "+sll.search(22)); //false
+
+        // reversing SLL
+        ListNode reverseSllHead = sll.reversingSLL();
+        sll.head = reverseSllHead;
+        sll.display(); // 20 --> 10 --> 5 --> 3 --> null
+
+        // finding the middle element in a SLL
+        System.out.println("the middle element in the SLL is:: "+sll.findMiddleElement().data);
+
+        sll.display();
+        //finding the nth node from the last of a SLL
+        System.out.println("the 3rd element from the last of SLL is:: "+sll.findNthFromLast(3).data); // 10
+        System.out.println("the 2nd element from the last of SLL is:: "+sll.findNthFromLast(2).data); // 5
+
+        sll.display(); // 20 --> 10 --> 5 --> 3 --> null
+        // finding the nth node from the start of a SLL
+        System.out.println("the 3rd element from the start is:: "+sll.findNthFromStart(4).data); // 3
+        System.out.println("the 2nd element from the start is:: "+sll.findNthFromStart(1).data); // 20
+
+        sll.insertLast(30);
+        sll.insertStart(1);
+        sll.insertStart(4);
+        sll.display(); // 4 --> 1 --> 20 --> 10 --> 5 --> 3 --> 30 --> null
+
     }
 
 }
