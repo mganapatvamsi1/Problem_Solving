@@ -103,7 +103,19 @@ public class Sll2 {
         return tmp; // return current;
     }
 
-
+    // does loop exist
+    public boolean doesLoopExist() {
+        LNode fastPointer = head;
+        LNode slowPointer = head;
+        while (fastPointer != null && fastPointer.next != null) {
+            fastPointer = fastPointer.next.next;
+            slowPointer = slowPointer.next;
+            if (slowPointer == fastPointer) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         Sll2 testSll = new Sll2();
@@ -133,9 +145,8 @@ public class Sll2 {
         testSll.removingKey(9);
         testSll.display();
 
-
         // detecting a loop
-
+        System.out.println("does loop exist:: "+testSll.doesLoopExist());
 
         // converting a unsorted list to a sorted one
 

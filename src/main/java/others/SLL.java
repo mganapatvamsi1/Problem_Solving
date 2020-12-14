@@ -345,10 +345,15 @@ public class SLL {
         System.out.println("the 3rd element from the last of SLL is:: "+sll.findNthFromLast(3).data); // 10
         System.out.println("the 2nd element from the last of SLL is:: "+sll.findNthFromLast(2).data); // 5
 
-        sll.display();
+        sll.display(); // 20 --> 10 --> 5 --> 3 --> null
         // finding the nth node from the start of a SLL
         System.out.println("the 3rd element from the start is:: "+sll.findNthFromStart(4).data); // 3
         System.out.println("the 2nd element from the start is:: "+sll.findNthFromStart(1).data); // 20
+
+        sll.insertLast(30);
+        sll.insertStart(1);
+        sll.insertStart(4);
+        sll.display(); // 4 --> 1 --> 20 --> 10 --> 5 --> 3 --> 30 --> null
 
     }
 
