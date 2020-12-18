@@ -354,7 +354,6 @@ public class SLL {
         sll.insertStart(1);
         sll.insertStart(4);
         sll.display(); // 4 --> 1 --> 20 --> 10 --> 5 --> 3 --> 30 --> null
-
     }
 
 }
