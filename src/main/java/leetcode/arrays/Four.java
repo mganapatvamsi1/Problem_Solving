@@ -16,8 +16,16 @@ public class Four {
         }
         HashSet<Integer> hashSet = new HashSet<>();
 
-        for (int i = 0; i < arr.length ; i++) {
-            if (hashSet.contains(arr[i]))  {
+//        for (int i = 0; i < arr.length ; i++) {
+//            if (hashSet.contains(arr[i]))  {
+//                return true;
+//            } else {
+//                hashSet.add(arr[i]);
+//            }
+//        }
+
+        for (int i : arr) {
+            if (hashSet.contains(arr[i])) {
                 return true;
             } else {
                 hashSet.add(arr[i]);
