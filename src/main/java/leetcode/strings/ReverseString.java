@@ -3,7 +3,7 @@ package leetcode.strings;
 import java.util.Stack;
 
 public class ReverseString {
-// APPROACH-1
+// APPROACH-1 (using stack)
 //    public void reverseString(char[] s) {
 //        char[] reverseArr = new char[s.length];
 //        Stack<Character> stack = new Stack<>();
