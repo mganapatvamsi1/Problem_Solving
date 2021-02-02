@@ -1,6 +1,5 @@
 package others.queues;
 
-
 import java.util.NoSuchElementException;
 
 public class QueueList {
@@ -79,7 +78,6 @@ public class QueueList {
         return front.data;
     }
 
-
     // last (value stored by the rear element)
     public int getLast() {
         if (isEmpty()) {
@@ -100,6 +98,5 @@ public class QueueList {
         queue.dequeue();
         queue.dequeue();
         queue.print();
-
     }
 }
