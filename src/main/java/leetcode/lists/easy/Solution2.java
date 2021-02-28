@@ -11,8 +11,11 @@ public class Solution2 {
         if (n <= 0) {
             throw new IllegalArgumentException("Invalid value: n =  "+n);
         }
-        ListNode mainPtr = head;
-        ListNode refPtr = head;
+        ListNode temp = new ListNode(-1);
+        temp.next = head;
+
+        ListNode mainPtr = temp;
+        ListNode refPtr = temp;
         int count = 0;
         while (count < n) {
             if (refPtr == null) {
@@ -21,11 +24,12 @@ public class Solution2 {
             mainPtr = mainPtr.next;
             count++;
         }
-        while (mainPtr != null) {
+        while (mainPtr != null && mainPtr.next != null) {
             mainPtr = mainPtr.next;
             refPtr = refPtr.next;
         }
-        return refPtr;
+        refPtr.next = refPtr.next.next;
+        return temp.next;
     }
 
     public void display(ListNode head) {
