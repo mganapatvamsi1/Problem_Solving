@@ -36,13 +36,41 @@ public class HashTable {
         return size == 0;
     }
 
+    // using modular hashing function
+    public int getBucketIndex(Integer key) {
+        return key % numOfBuckets; // buckets.length
+    }
 
     public void put(Integer key, String value) {
-
+        if (key == null || value == null) {
+            throw new IllegalArgumentException("Key or value is null");
+        }
+        int bucketIndex = getBucketIndex(key);
+        HashNode head = buckets[bucketIndex];
+        while (head != null) {
+            if (head.key == key) {
+                head.value = value;
+                return;
+            }
+            head = head.next;
+        }
+        size++;
+        head = buckets[bucketIndex]; // to make head reach to the first location
+        HashNode node = new HashNode(key, value);
+        node.next = head; // trying to insert the new node if any, at the beginning of the node
+        buckets[bucketIndex] = node;
     }
 
     // this method takes in a key and returns the corresponding associated element
     public String get(Integer key) {
+        int bucketIndex = getBucketIndex(key);
+        HashNode head = buckets[bucketIndex];
+        while (head != null) {
+            if (head.key == key) {
+                return head.value;
+            }
+            head = head.next;
+        }
         return null;
     }
 
@@ -55,6 +83,13 @@ public class HashTable {
     // a HashTable are O(1)
 
     public static void main(String[] args) {
+        HashTable hashTable = new HashTable(10);
+        hashTable.put(105, "Tom");
+        hashTable.put(21, "Sana");
+        hashTable.put(21, "Raj");
+        hashTable.put(21, "Aryan");
+        hashTable.put(31, "Malhotra");
+        System.out.println(hashTable.getSize());
 
     }
 }
