@@ -1,5 +1,6 @@
 package others.hashing;
 
+// The average time complexity for all these inserting, retrieving and remove an element from a HashTable are O(1)
 public class HashTable {
 
     private HashNode[] buckets;
@@ -63,6 +64,9 @@ public class HashTable {
 
     // this method takes in a key and returns the corresponding associated element
     public String get(Integer key) {
+        if (key == null) {
+            throw new IllegalArgumentException("Key or value is null");
+        }
         int bucketIndex = getBucketIndex(key);
         HashNode head = buckets[bucketIndex];
         while (head != null) {
@@ -76,11 +80,31 @@ public class HashTable {
 
     // the corresponding key-value pair will be completely removed from the HashTable and returns its corresponding value
     public String remove(Integer key) {
-        return null;
+        if (key == null) {
+            throw new IllegalArgumentException("Key or value is null");
+        }
+        int bucketIndex = getBucketIndex(key);
+        HashNode head = buckets[bucketIndex];
+        HashNode previous = null;
+        while (head != null) {
+            if (head.key == key) {
+                break;
+            }
+            previous = head;
+            head = head.next;
+        }
+        if (head == null) {
+            return null;
+        }
+        size--;
+        if (previous != null) {
+            previous.next = head.next;
+        } else {
+            buckets[bucketIndex] = head.next;
+        }
+        return head.value;
     }
 
-    // The average time complexity for all these inserting, retrieving and remove an element from
-    // a HashTable are O(1)
 
     public static void main(String[] args) {
         HashTable hashTable = new HashTable(10);
@@ -90,6 +114,16 @@ public class HashTable {
         hashTable.put(21, "Aryan");
         hashTable.put(31, "Malhotra");
         System.out.println(hashTable.getSize());
+        System.out.println("checking value for given key of 31:: "+hashTable.get(31));
+        System.out.println("checking value for given key of 21:: "+hashTable.get(21));
+
+        System.out.println("removing an element 105:: "+hashTable.remove(105));
+        System.out.println(hashTable.getSize());
+
+//        char[] testChar = {'a', 'b', 'c', 'd', 'e', 'f'};
+//        String testStr = new String(testChar);
+//        System.out.println("testing:: "+testStr);
 
     }
+
 }
