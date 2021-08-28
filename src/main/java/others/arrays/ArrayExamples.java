@@ -1,4 +1,4 @@
-package others;
+package others.arrays;
 
 public class ArrayExamples {
 

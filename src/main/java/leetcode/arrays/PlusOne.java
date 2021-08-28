@@ -6,7 +6,7 @@ Given a non-empty array of decimal digits representing a non-negative integer, i
 The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.
 You may assume the integer does not contain any leading zero, except the number 0 itself.
  */
-public class Eight {
+public class PlusOne {
 
     //TODO:: this approach is wrong: as when there are more 9's then we can't cover that result {1, 0}:: {1,0,0}
 //    public int[] plusOne(int[] digits) {
@@ -54,12 +54,12 @@ public class Eight {
 
 
     public static void main(String[] args) {
-        Eight eight = new Eight();
+        PlusOne plusOne = new PlusOne();
         int[] testArr = {1, 2, 3};
         int[] testArr2 = {9};
         int[] testArr3 = {9, 9};
         int[] testArr4 = {9, 8, 9};
-        eight.plusOne(testArr4);
+        plusOne.plusOne(testArr4);
 //        eight.plusOne(testArr3);
 //        eight.plusOne(testArr2);
 //        eight.testingA(testArr2);

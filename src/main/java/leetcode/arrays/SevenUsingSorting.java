@@ -8,7 +8,7 @@ import java.util.List;
 
 // time complexity --> O(mlogm + nlogn)
 // space complexity --> O(1)
-public class Seven2 {
+public class SevenUsingSorting {
     public int[] intersect(int[] num1, int[] num2) {
         Arrays.sort(num1);
         Arrays.sort(num2);

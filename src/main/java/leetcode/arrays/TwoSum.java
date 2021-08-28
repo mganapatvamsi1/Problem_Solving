@@ -5,7 +5,7 @@ package leetcode.arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Ten {
+public class TwoSum {
 
     public int[] twoSum(int[] arr, int target) {
         Map<Integer, Integer> map = new HashMap<>();

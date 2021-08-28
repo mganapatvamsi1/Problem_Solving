@@ -8,7 +8,7 @@ Your function should return true if any value appears at least twice in the arra
 
 import java.util.HashSet;
 
-public class Four {
+public class FindIfArrayContainsDuplicates {
 
     public boolean isDuplicate(int[] arr) {
         if (arr == null || arr.length == 0) {
@@ -36,13 +36,13 @@ public class Four {
 
 
     public static void main(String[] args) {
-        Four four = new Four();
+        FindIfArrayContainsDuplicates findIfArrayContainsDuplicates = new FindIfArrayContainsDuplicates();
         int[] test = {1, 2, 3, 1};
         int[] test1 = {2, 14, 18, 22, 22};
         int[] test2 = {3, 1};
 //        System.out.println("is duplicate: "+four.isDuplicate(test2));
 //        System.out.println("is duplicate: "+four.isDuplicate(test1));
-        System.out.println("is duplicate: "+four.isDuplicate(test));
+        System.out.println("is duplicate: "+ findIfArrayContainsDuplicates.isDuplicate(test));
     }
 }
 

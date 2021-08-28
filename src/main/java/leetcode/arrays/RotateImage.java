@@ -3,7 +3,7 @@ package leetcode.arrays;
 /*
 Rotate Image
  */
-public class Twelve {
+public class RotateImage {
 
     public void printElementsOfAMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
@@ -68,7 +68,7 @@ public class Twelve {
 
 
     public static void main(String[] args) {
-        Twelve test = new Twelve();
+        RotateImage test = new RotateImage();
         int[][] dample = {
                 {1, 2, 3},
                 {4, 5, 6},

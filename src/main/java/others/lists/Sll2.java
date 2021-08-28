@@ -1,4 +1,4 @@
-package others;
+package others.lists;
 
 public class Sll2 {
 

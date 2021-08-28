@@ -7,7 +7,7 @@ import java.util.HashSet;
 Given two arrays, write a function to compute their intersection.
 // each element in the result set is unique
  */
-public class Six {
+public class IntersectionOfTwoArrays2 {
 
     public int[] intersect(int[] nums1, int[] nums2) {
         HashSet<Integer> set1 = new HashSet<>();

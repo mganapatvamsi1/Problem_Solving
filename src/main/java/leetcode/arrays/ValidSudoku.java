@@ -15,7 +15,7 @@ Note:
 A Sudoku board (partially filled) could be valid but is not necessarily solvable.
 Only the filled cells need to be validated according to the mentioned rules.
  */
-public class Eleven {
+public class ValidSudoku {
 
 // looping through rows is the outer for loop and looping through
     // columns is the inner for loop.
@@ -46,7 +46,7 @@ public class Eleven {
         char testBoards[][] = new char[9][9];
 
 
-        Eleven eleven = new Eleven();
+        ValidSudoku validSudoku = new ValidSudoku();
 //        eleven.isValidSudoku();
 
     }

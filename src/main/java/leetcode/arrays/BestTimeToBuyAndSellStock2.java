@@ -1,7 +1,5 @@
 package leetcode.arrays;
 
-import org.thymeleaf.engine.IterationStatusVar;
-
 /*
  // Best Time to Buy and Sell Stock II
  Say you have an array prices for which the ith element is the price of a given stock on day i.
@@ -12,7 +10,7 @@ Note: You may not engage in multiple transactions at the same time (i.e., you mu
 
 
  */
-public class Two {
+public class BestTimeToBuyAndSellStock2 {
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length == 0) {
             return 0;
@@ -27,13 +25,13 @@ public class Two {
     }
 
     public static void main(String[] args) {
-        Two two = new Two();
+        BestTimeToBuyAndSellStock2 bestTimeToBuyAndSellStock2 = new BestTimeToBuyAndSellStock2();
         int[] arr1 = {7,1,5,3,6,4};
         int[] arr2 = {1,2,3,4,5};
         int[] arr3 = {7,6,4,3,1};
-        two.maxProfit(arr1);
-        two.maxProfit(arr2);
-        two.maxProfit(arr3);
+        bestTimeToBuyAndSellStock2.maxProfit(arr1);
+        bestTimeToBuyAndSellStock2.maxProfit(arr2);
+        bestTimeToBuyAndSellStock2.maxProfit(arr3);
     }
 
 }
