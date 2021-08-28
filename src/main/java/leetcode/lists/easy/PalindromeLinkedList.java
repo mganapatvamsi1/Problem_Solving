@@ -10,7 +10,6 @@ Traverse the list again. For every visited node, pop a node from stack and compa
 If all nodes matched, then return true, else false.
  */
 
-import javax.xml.soap.Node;
 import java.util.Stack;
 
 class ListNode3 {
@@ -21,7 +20,7 @@ class ListNode3 {
     ListNode3(int val, ListNode3 next) { this.val = val; this.next = next; }
 }
 
-public class Solution3 {
+public class PalindromeLinkedList {
 
     public static boolean isPalindrome(ListNode3 head) {
         ListNode3 slow = head;
@@ -45,7 +44,7 @@ public class Solution3 {
     }
 
     public static void main(String[] args) {
-        Solution3 solution3 = new Solution3();
+        PalindromeLinkedList palindromeLinkedList = new PalindromeLinkedList();
         ListNode3 one = new ListNode3(1);
         ListNode3 two = new ListNode3(3);
         ListNode3 three = new ListNode3(5);

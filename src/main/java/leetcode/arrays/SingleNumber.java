@@ -1,8 +1,6 @@
 package leetcode.arrays;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 
 /*
 //Single Number
@@ -10,7 +8,7 @@ import java.util.List;
 Follow up: Could you implement a solution with a linear runtime complexity and without using extra memory?
 
  */
-public class Five {
+public class SingleNumber {
     public int singleNumber(int[] arr) {
         HashSet<Integer> set = new HashSet<>();
         for (int i = 0; i < arr.length; i++) {
@@ -37,7 +35,7 @@ public class Five {
 
 
     public static void main(String[] args) {
-        Five five = new Five();
+        SingleNumber singleNumber = new SingleNumber();
         int[] test = {2, 2, 1};
         int[] test1 = {4, 1, 2, 1, 2};
         int[] test2 = {1};
@@ -46,7 +44,7 @@ public class Five {
 //        five.singleNumber(test);
 //        five.singleNumber(test1);
 //        five.singleNumber(test2);
-        five.singleNumber(test3);
+        singleNumber.singleNumber(test3);
 
     }
 

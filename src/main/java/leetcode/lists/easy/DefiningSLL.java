@@ -13,7 +13,7 @@ class ListNode {
   }
 
 
-public class Solution1 {
+public class DefiningSLL {
     public ListNode reverseList(ListNode head) {
 
         ListNode current = head;
@@ -30,7 +30,7 @@ public class Solution1 {
 
 
     public static void main(String[] args) {
-        Solution1 sol = new Solution1();
+        DefiningSLL sol = new DefiningSLL();
         ListNode one = new ListNode(5);
         ListNode two = new ListNode(10);
         ListNode three = new ListNode(15);

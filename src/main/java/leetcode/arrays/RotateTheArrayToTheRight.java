@@ -9,7 +9,7 @@ Try to come up as many solutions as you can, there are at least 3 different ways
 Could you do it in-place with O(1) extra space?
 
  */
-public class Three {
+public class RotateTheArrayToTheRight {
 
     public void rotate(int[] nums, int k) {
         k = k % nums.length;
@@ -40,9 +40,9 @@ public class Three {
 
 
     public static void main(String[] args) {
-        Three three = new Three();
+        RotateTheArrayToTheRight rotateTheArrayToTheRight = new RotateTheArrayToTheRight();
         int[] test1 = {1, 2, 3, 4, 5, 6, 7};
-        three.rotate(test1, 3);
+        rotateTheArrayToTheRight.rotate(test1, 3);
 
 //        three.test(test1);
     }

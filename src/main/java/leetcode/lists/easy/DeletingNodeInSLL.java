@@ -6,7 +6,7 @@ You will not be given access to the head of the list,
 instead you will be given access to the node to be deleted directly.
 It is guaranteed that the node to be deleted is not a tail node in the list.
  */
-class Solution {
+class DeletingNodeInSLL {
     public ListNode head;
 
     public static class ListNode {
@@ -64,14 +64,14 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        solution.insertFirst(-99);
-        solution.insertFirst(5);
-        solution.insertFirst(-3);
-        solution.display();
+        DeletingNodeInSLL deletingNodeInSLL = new DeletingNodeInSLL();
+        deletingNodeInSLL.insertFirst(-99);
+        deletingNodeInSLL.insertFirst(5);
+        deletingNodeInSLL.insertFirst(-3);
+        deletingNodeInSLL.display();
         ListNode node = new ListNode(-3);
-        solution.deleteNode(node);
-        solution.display();
+        deletingNodeInSLL.deleteNode(node);
+        deletingNodeInSLL.display();
     }
 }
 

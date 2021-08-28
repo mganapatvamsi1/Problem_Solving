@@ -1,4 +1,4 @@
-package others;
+package others.lists;
 
 import java.util.NoSuchElementException;
 

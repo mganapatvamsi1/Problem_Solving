@@ -12,7 +12,7 @@ You must do this in-place without making a copy of the array.
 Minimize the total number of operations.
  */
 
-public class Nine {
+public class MoveZeros {
 
     public void moveZeros(int[] nums) {
         int index = 0;
@@ -29,10 +29,10 @@ public class Nine {
     }
 
     public static void main(String[] args) {
-        Nine nine = new Nine();
+        MoveZeros moveZeros = new MoveZeros();
         int[] test1 = {0,1,0,3,12};
         int[] test2 = {0,1};
-        nine.moveZeros(test1);
+        moveZeros.moveZeros(test1);
 //        nine.moveZeros(test2);
     }
 }

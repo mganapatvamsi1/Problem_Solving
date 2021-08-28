@@ -5,7 +5,7 @@ Merge two sorted linked lists and return it as a new sorted list.
 The new list should be made by splicing together the nodes of the first two lists.
 */
 
-public class Solution5 {
+public class MergeTwoSortedLists {
 
     public ListNode mergeTwoSortedLists(ListNode l1, ListNode l2) {
         ListNode newList = new ListNode(-1);
@@ -29,7 +29,7 @@ public class Solution5 {
     }
 
     public static void main(String[] args) {
-        Solution5 solution5 = new Solution5();
+        MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
         ListNode one = new ListNode(1);
         ListNode two = new ListNode(3);
         ListNode three = new ListNode(5);
@@ -44,7 +44,7 @@ public class Solution5 {
         test2.next = test3;
         test3.next = null;
 
-        solution5.mergeTwoSortedLists(one, test1);
+        mergeTwoSortedLists.mergeTwoSortedLists(one, test1);
 
     }
 

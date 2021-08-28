@@ -2,7 +2,7 @@ package leetcode.lists.easy;
 
 //Remove Nth Node From End of List
 
-public class Solution2 {
+public class RemoveNthNodeFromEndOfList {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null) {
@@ -42,7 +42,7 @@ public class Solution2 {
     }
 
     public static void main(String[] args) {
-        Solution2 solution2 = new Solution2();
+        RemoveNthNodeFromEndOfList removeNthNodeFromEndOfList = new RemoveNthNodeFromEndOfList();
         ListNode one = new ListNode(1);
         ListNode two = new ListNode(2);
         ListNode three = new ListNode(3);
@@ -53,9 +53,9 @@ public class Solution2 {
         three.next = four;
         four.next = fifth;
         fifth.next = null;
-        solution2.display(one);
-        System.out.println("removing 2nd element from the last:: "+solution2.removeNthFromEnd(one, 2).val);
-        solution2.display(one);
+        removeNthNodeFromEndOfList.display(one);
+        System.out.println("removing 2nd element from the last:: "+ removeNthNodeFromEndOfList.removeNthFromEnd(one, 2).val);
+        removeNthNodeFromEndOfList.display(one);
     }
 }
 

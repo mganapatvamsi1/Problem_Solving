@@ -1,7 +1,4 @@
-package others;
-
-import com.sun.xml.internal.bind.v2.TODO;
-import jdk.nashorn.internal.ir.IfNode;
+package others.lists;
 
 /* Representing a SinglyLinkedList (SLL) */
 public class SLL {
