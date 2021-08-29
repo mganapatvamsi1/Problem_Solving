@@ -92,7 +92,33 @@ public class SLL {
             newNode.next = mainPtr;
         }
     }
-    public void insertAtPosition2(int value, int position) {
+
+    public ListNode insertAtPosition2(int value, int position) {
+        ListNode newNode = new ListNode(value);
+        int count = 0;
+        ListNode current = head;
+        ListNode temp = null;
+        if (head == null) {
+            head = newNode;
+            return newNode;
+        }
+        if (position == 0) {
+            newNode.next = head;
+            head = newNode;
+            return newNode;
+        }
+        while (count != position) {
+            count++;
+            temp = current;
+            current = current.next;
+        }
+        temp.next = newNode;
+        newNode.next = current;
+        return newNode;
+    }
+
+    //TODO: Test this Impl's solution once
+    public void insertAtPosition3(int value, int position) {
         ListNode newNode = new ListNode(value);
         if (position == 0) {
             newNode.next = head;
@@ -179,8 +205,29 @@ public class SLL {
         }
     }
 
+    //TODO: Test this Impl's solution once
+    public ListNode deleteAtPosition3(int position) {
+        if (head == null) return head;
+        ListNode current = head;
+        ListNode previous = null;
+        int count = 0;
+        if (position == 0) {
+            head = head.next;
+            current.next = null;
+            return current;
+        }
+        while (count != position) {
+                count++;
+            previous = current;
+            current = current.next;
+            }
+           previous.next = current.next;
+           current.next = null;
+            return current;
+    }
+
     /* Searching an element in a SLL */
-    //TODO:: Time Complexity is O() and Space Complexity is O()
+    //TODO:: Time Complexity is O(N) and Space Complexity is O(1)
     public boolean search(int key) {
         if (head == null) {
             return false;
@@ -196,7 +243,7 @@ public class SLL {
     }
 
     /* Reversing a SLL */
-    //TODO:: Time Complexity is O() and Space Complexity is O()
+    //TODO:: Time Complexity is O(N) and Space Complexity is O(1)
     public ListNode reversingSLL() {
         if (head == null) {
             return head;
@@ -303,7 +350,7 @@ public class SLL {
         // inserting a node at a certain position in SLL
         sll.insertAtPosition(13, 1);
         sll.display();
-        sll.insertAtPosition(30, 3);
+        sll.insertAtPosition2(30, 3);
         sll.display(); // 1 --> 13 --> 3 --> 30 --> 5 --> 10 --> 15 --> 20 --> 23 --> 26 --> null
 
         // deleting first node in the SLL
