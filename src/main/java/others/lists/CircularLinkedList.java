@@ -100,7 +100,7 @@ public class CircularLinkedList {
             return last;
         }
         if (isEmpty()) {
-            throw new NoSuchElementException("CSLL is alreadt empty.");
+            throw new NoSuchElementException("CSLL is already empty.");
         }
         CListNode first = last.next;
         CListNode refPtr = null;
@@ -111,6 +111,7 @@ public class CircularLinkedList {
         refPtr.next = last.next;
         last.next = null;
         last = refPtr;
+//        length--;
         return last;
     }
 

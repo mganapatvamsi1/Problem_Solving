@@ -1,6 +1,7 @@
 package others.stacks;
 
 import java.util.EmptyStackException;
+import java.util.Stack;
 
 /*
 Time Complexity is O(1)

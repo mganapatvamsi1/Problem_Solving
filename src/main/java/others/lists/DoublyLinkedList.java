@@ -157,6 +157,17 @@ public class DoublyLinkedList {
         return mainPtr;
     }
 
+    //TODO: to verify this method later
+    public DListNode deleteLast2() {
+        if (head == null || tail == null) return null;
+        DListNode current = tail;
+        tail.previous.next = null;
+        tail = tail.previous;
+        current.previous = null;
+        length--;
+        return current;
+    }
+
     public DListNode deleteAtPosition(int position) {
         if (position == 0) {
             DListNode temp = head;
@@ -178,6 +189,7 @@ public class DoublyLinkedList {
         if (mainPtr.next != null) {
             mainPtr.next.previous = refPtr.next;
         }
+        length--;
         return mainPtr;
     }
 
@@ -211,7 +223,7 @@ public class DoublyLinkedList {
         // deleting the last node
         dll.deleteLast();
         dll.printForward(); // 4 --> 7 --> 1 --> 9 --> null
-        dll.deleteLast();
+        dll.deleteLast2();
         dll.printForward(); // 4 --> 7 --> 1 --> null
 
         // deleting at a certain position
