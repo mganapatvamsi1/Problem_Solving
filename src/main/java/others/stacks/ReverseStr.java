@@ -34,10 +34,6 @@ public class ReverseStr {
             int poppedVal = stack.pop();
             newArr[i] = poppedVal;
             arr[i] = newArr[i];
-//            System.out.println("elements : "+newArr[i]);
-        }
-//        System.out.println("reversed arr: " + arr);
-//        System.out.println("reversed arr: "+newArr);
         return arr;
     }
 
