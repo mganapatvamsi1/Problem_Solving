@@ -4,6 +4,11 @@ import java.util.List;
 
 public class Arrays2 {
 
+    public static void printArr(int[] arr) {
+        for (int el : arr) System.out.print(el + " ");
+        System.out.println();
+    }
+
     // finding the smallest common number
     // Runtime complexity is O(N) and Memory complexity is O(1)
     // Note:: to use 3 pointer approach and the fact that arrays are sorted in ascending order.
@@ -54,6 +59,30 @@ public class Arrays2 {
         return -1;
     }
 
+    // the array has to be modified in-place i.e, space complexity is O(1) and time complexity is O(N)
+    // we also need to maintain the order of non-zero elements in the array
+    public static void moveZerosToLeft(int[] arr) {
+        if (arr.length < 1) return;
+        int readIndex = arr.length - 1;
+        int writeIndex = arr.length - 1;
+        while (readIndex >= 0) {
+            if (arr[readIndex] != 0) {
+                arr[writeIndex] = arr[readIndex];
+                writeIndex--;
+            }
+            readIndex--; // this means arr[readIndex] == 0, so we have to decrement readIndex.
+        }
+        while (writeIndex >= 0) {
+            arr[writeIndex] = 0;
+            writeIndex--;
+        }
+        System.out.print("final arr: ");
+        printArr(arr);
+    }
+
+    //Stock Buy Sell to Maximize Profit
+
+
 
     public static void main(String[] args) {
         int[] v1 = new int[]{6, 7, 10, 25, 30, 63, 64};
@@ -61,6 +90,10 @@ public class Arrays2 {
         int[] v3 = new int[]{1, 6, 10, 14};
         System.out.println("Least Common Number: " + findLeastCommonNumber(v1, v2, v3)); // 6
 
+        System.out.print("initial arr: ");
+        int[] moveZerosArr = new int[]{1, 10, 20, 0, 59, 63, 0, 88, 0};
+        printArr(moveZerosArr);
+        moveZerosToLeft(moveZerosArr);
 
     }
 }
