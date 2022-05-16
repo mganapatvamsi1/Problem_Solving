@@ -297,6 +297,8 @@ public class Arrays1 {
     //Note: The iterative solution has the same O(LogN) runtime complexity as the recursive solution
     // but has a better memory complexity i.e., O(1) compared to the O(N) of recursive space.
 
+    //---------------------------------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------------------------------
 
     // The runtime complexity of this solution is linear i.e., O(N) as every element is pushed and popped from the deque only once in a single traversal.
     // The memory complexity of this solution is linear i.e., O(W) where W is the window size in this case.
