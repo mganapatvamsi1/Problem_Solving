@@ -80,10 +80,6 @@ public class Arrays2 {
         printArr(arr);
     }
 
-    //Stock Buy Sell to Maximize Profit
-
-
-
     public static void main(String[] args) {
         int[] v1 = new int[]{6, 7, 10, 25, 30, 63, 64};
         int[] v2 = new int[]{0, 4, 5, 6, 7, 8, 50};

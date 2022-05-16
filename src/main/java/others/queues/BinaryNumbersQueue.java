@@ -7,17 +7,18 @@ import java.util.Queue;
 public class BinaryNumbersQueue {
 
     public String[] generateBinary(int number) {
-        String[] result = new String[number];
+        String[] resultFinal = new String[number];
         Queue<String> queue = new LinkedList<>();
         queue.offer("1");
         for (int i = 0; i < number; i++) {
-            result[i] = queue.poll();
-            String s1 = result[i] + "0";
-            String s2 = result[i] + "1";
+            resultFinal[i] = queue.poll();
+            String s1 = resultFinal[i] + "0";
+
+            String s2 = resultFinal[i] + "1";
             queue.offer(s1);
             queue.offer(s2);
         }
-        return result;
+        return resultFinal;
     }
 
 
